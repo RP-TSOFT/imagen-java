@@ -1,0 +1,9 @@
+version: '3'
+services:
+  java-app:
+    image: openjdk:17
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: >
+      sh -c "echo 'public class App { public static void main(String[] args) { System.out.println(\"Bienvenidos al mundo DevOps\"); }}' > App.java && javac App.java && java App"
